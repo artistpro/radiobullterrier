@@ -4,29 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Radio Bull Terrier - Rock & Reggae desde 2008</title>
-    <meta name="description" content="Radio Bull Terrier - Difundiendo la cultura bull terrier desde 2008. Rock & Reggae las 24 horas. Artículos, música y comunidad.">
+    <meta name="description" content="Radio Bull Terrier - Difundiendo la cultura bull terrier desde 2008. Rock & Reggae las 24 horas.">
     
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://radiobullterrier.com/">
+    <!-- Open Graph -->
     <meta property="og:title" content="Radio Bull Terrier - Rock & Reggae desde 2008">
     <meta property="og:description" content="Difundiendo la cultura bull terrier desde 2008. Rock & Reggae las 24 horas.">
-    <meta property="og:image" content="https://radiobullterrier.com/images/og-image.jpg">
+    <meta property="og:type" content="website">
     
     <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://radiobullterrier.com/">
-    <meta property="twitter:title" content="Radio Bull Terrier - Rock & Reggae desde 2008">
-    <meta property="twitter:description" content="Difundiendo la cultura bull terrier desde 2008. Rock & Reggae las 24 horas.">
-    <meta property="twitter:image" content="https://radiobullterrier.com/images/og-image.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Radio Bull Terrier - Rock & Reggae desde 2008">
     
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@200;500&display=swap" rel="stylesheet">
     
     <style>
-        /* Reset and Base Styles */
         * {
             margin: 0;
             padding: 0;
@@ -34,47 +28,20 @@
         }
 
         :root {
-            --color-primary: #1a1a1a;
-            --color-secondary: #f5f5f5;
+            --color-text: rgb(195, 162, 117);
+            --color-dark: #1a1a1a;
+            --color-light: #f5f5f5;
             --color-accent: #8B7355;
-            --color-light-brown: #D2B48C;
-            --color-white: #ffffff;
-            --color-black: #000000;
-            --font-primary: 'Inter', sans-serif;
-            --font-display: 'Playfair Display', serif;
-            --header-height: 80px;
-        }
-
-        html {
-            scroll-behavior: smooth;
+            --font-family: 'Work Sans', Helvetica, Arial, sans-serif;
         }
 
         body {
-            font-family: var(--font-primary);
-            line-height: 1.6;
-            color: var(--color-primary);
-            background-color: var(--color-secondary);
-            overflow-x: hidden;
-        }
-
-        /* Smooth Scrolling with Parallax */
-        .parallax-container {
-            height: 100vh;
-            overflow-x: hidden;
-            overflow-y: auto;
-            perspective: 1px;
-        }
-
-        .parallax-element {
-            position: absolute;
-            top: 0;
-            right: 0;
-            bottom: 0;
-            left: 0;
-        }
-
-        .parallax-back {
-            transform: translateZ(-1px) scale(2);
+            font-family: var(--font-family);
+            font-weight: 200;
+            font-size: 17px;
+            line-height: 20px;
+            color: var(--color-text);
+            background: var(--color-light);
         }
 
         /* Navigation */
@@ -86,13 +53,7 @@
             backdrop-filter: blur(20px);
             border-bottom: 1px solid rgba(139, 115, 85, 0.1);
             z-index: 1000;
-            height: var(--header-height);
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        .navbar.scrolled {
-            background: rgba(255, 255, 255, 0.98);
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            height: 80px;
         }
 
         .nav-container {
@@ -106,85 +67,53 @@
         }
 
         .logo {
-            font-family: var(--font-display);
+            font-weight: 500;
             font-size: 28px;
-            font-weight: 700;
-            color: var(--color-primary);
+            color: var(--color-dark);
             text-decoration: none;
-            letter-spacing: -0.5px;
         }
 
         .nav-links {
             display: flex;
             list-style: none;
             gap: 50px;
-            align-items: center;
         }
 
         .nav-links a {
-            color: var(--color-primary);
+            color: var(--color-text);
             text-decoration: none;
-            font-weight: 500;
-            font-size: 16px;
-            transition: all 0.3s ease;
-            position: relative;
+            font-weight: 200;
+            transition: color 0.3s ease;
         }
 
         .nav-links a:hover {
             color: var(--color-accent);
         }
 
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--color-accent);
-            transition: width 0.3s ease;
-        }
-
-        .nav-links a:hover::after {
-            width: 100%;
-        }
-
-        /* Mobile Menu */
-        .mobile-menu-btn {
-            display: none;
-            flex-direction: column;
-            cursor: pointer;
-            padding: 5px;
-        }
-
-        .mobile-menu-btn span {
-            width: 25px;
-            height: 2px;
-            background: var(--color-primary);
-            margin: 3px 0;
-            transition: 0.3s;
-        }
-
-        /* Hero Section with Video Background */
+        /* Hero Section */
         .hero {
             position: relative;
             height: 100vh;
-            overflow: hidden;
             display: flex;
             align-items: center;
             justify-content: center;
+            background: var(--color-dark);
+            overflow: hidden;
         }
 
         .video-background {
             position: absolute;
-            top: 50%;
-            left: 50%;
-            min-width: 100%;
-            min-height: 100%;
-            width: auto;
-            height: auto;
-            transform: translateX(-50%) translateY(-50%);
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
             z-index: 1;
+        }
+
+        .video-background video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
 
         .video-overlay {
@@ -193,12 +122,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(
-                135deg,
-                rgba(26, 26, 26, 0.7) 0%,
-                rgba(139, 115, 85, 0.3) 50%,
-                rgba(26, 26, 26, 0.8) 100%
-            );
+            background: rgba(26, 26, 26, 0.6);
             z-index: 2;
         }
 
@@ -206,39 +130,28 @@
             position: relative;
             z-index: 3;
             text-align: center;
-            max-width: 1000px;
+            color: white;
+            max-width: 800px;
             padding: 0 40px;
-            color: var(--color-white);
         }
 
         .hero-title {
-            font-family: var(--font-display);
             font-size: clamp(3rem, 8vw, 7rem);
-            font-weight: 700;
+            font-weight: 500;
             margin-bottom: 20px;
             letter-spacing: -2px;
-            background: linear-gradient(135deg, #ffffff 0%, #D2B48C 50%, #8B7355 100%);
-            background-clip: text;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            animation: heroGlow 4s ease-in-out infinite alternate;
-        }
-
-        @keyframes heroGlow {
-            from { filter: brightness(1); }
-            to { filter: brightness(1.2) drop-shadow(0 0 30px rgba(139, 115, 85, 0.5)); }
         }
 
         .hero-subtitle {
             font-size: clamp(1.2rem, 3vw, 2rem);
-            font-weight: 300;
+            font-weight: 200;
             margin-bottom: 30px;
             opacity: 0.9;
         }
 
         .hero-tagline {
-            font-size: clamp(1rem, 2vw, 1.3rem);
-            font-weight: 400;
+            font-size: 17px;
+            font-weight: 200;
             margin-bottom: 60px;
             opacity: 0.8;
             font-style: italic;
@@ -247,11 +160,10 @@
         /* Player Section */
         .player-section {
             background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(30px);
-            border-radius: 20px;
-            padding: 40px;
+            backdrop-filter: blur(20px);
+            border-radius: 15px;
+            padding: 30px;
             border: 1px solid rgba(255, 255, 255, 0.2);
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
             max-width: 600px;
             margin: 0 auto;
         }
@@ -260,51 +172,12 @@
             width: 100%;
             min-height: 150px;
             border: none;
-            border-radius: 15px;
-            background: rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
         }
 
-        /* Scroll Indicator */
-        .scroll-indicator {
-            position: absolute;
-            bottom: 40px;
-            left: 50%;
-            transform: translateX(-50%);
-            z-index: 3;
-            animation: bounce 2s infinite;
-        }
-
-        .scroll-indicator::before {
-            content: '';
-            width: 2px;
-            height: 60px;
-            background: rgba(255, 255, 255, 0.6);
-            display: block;
-            margin: 0 auto 10px;
-        }
-
-        .scroll-indicator::after {
-            content: '';
-            width: 12px;
-            height: 12px;
-            border-right: 2px solid rgba(255, 255, 255, 0.6);
-            border-bottom: 2px solid rgba(255, 255, 255, 0.6);
-            transform: rotate(45deg);
-            display: block;
-            margin: 0 auto;
-        }
-
-        @keyframes bounce {
-            0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
-            40% { transform: translateX(-50%) translateY(-10px); }
-            60% { transform: translateX(-50%) translateY(-5px); }
-        }
-
-        /* Featured Articles Section */
-        .featured-section {
+        /* Sections */
+        .section {
             padding: 120px 0;
-            background: var(--color-white);
-            position: relative;
         }
 
         .container {
@@ -314,15 +187,14 @@
         }
 
         .section-title {
-            font-family: var(--font-display);
             font-size: clamp(2.5rem, 5vw, 4rem);
-            font-weight: 600;
+            font-weight: 500;
             text-align: center;
             margin-bottom: 80px;
-            color: var(--color-primary);
-            letter-spacing: -1px;
+            color: var(--color-dark);
         }
 
+        /* Articles */
         .articles-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
@@ -330,28 +202,26 @@
         }
 
         .article-card {
-            background: var(--color-white);
-            border-radius: 20px;
+            background: white;
+            border-radius: 15px;
             overflow: hidden;
             box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: transform 0.3s ease;
             border: 1px solid rgba(139, 115, 85, 0.1);
         }
 
         .article-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+            transform: translateY(-5px);
         }
 
         .article-image {
             width: 100%;
             height: 250px;
-            background: linear-gradient(135deg, var(--color-accent), var(--color-light-brown));
+            background: linear-gradient(135deg, var(--color-accent), #D2B48C);
             display: flex;
             align-items: center;
             justify-content: center;
-            color: var(--color-white);
-            font-size: 18px;
+            color: white;
             font-weight: 500;
         }
 
@@ -363,44 +233,28 @@
             font-size: 14px;
             color: var(--color-accent);
             margin-bottom: 15px;
-            font-weight: 500;
         }
 
         .article-title {
-            font-family: var(--font-display);
             font-size: 24px;
-            font-weight: 600;
+            font-weight: 500;
             margin-bottom: 15px;
-            line-height: 1.3;
-            color: var(--color-primary);
+            color: var(--color-dark);
         }
 
         .article-excerpt {
-            color: #666;
-            line-height: 1.6;
             margin-bottom: 20px;
         }
 
         .read-more {
             color: var(--color-accent);
             text-decoration: none;
-            font-weight: 600;
             font-size: 14px;
             text-transform: uppercase;
             letter-spacing: 1px;
-            transition: all 0.3s ease;
         }
 
-        .read-more:hover {
-            color: var(--color-primary);
-        }
-
-        /* About Section */
-        .about-section {
-            padding: 120px 0;
-            background: linear-gradient(135deg, #fafafa 0%, #f5f5f5 100%);
-        }
-
+        /* About */
         .about-content {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -409,18 +263,10 @@
         }
 
         .about-text h3 {
-            font-family: var(--font-display);
             font-size: 32px;
-            font-weight: 600;
+            font-weight: 500;
             color: var(--color-accent);
             margin-bottom: 30px;
-        }
-
-        .about-text p {
-            font-size: 18px;
-            line-height: 1.8;
-            color: #555;
-            margin-bottom: 25px;
         }
 
         .about-image {
@@ -430,33 +276,21 @@
         .bull-terrier-image {
             width: 100%;
             max-width: 400px;
-            border-radius: 20px;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
-            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            height: 400px;
+            background: linear-gradient(135deg, var(--color-accent), #D2B48C);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 500;
         }
 
-        .bull-terrier-image:hover {
-            transform: scale(1.05) rotate(2deg);
-        }
-
-        /* Contact Section */
-        .contact-section {
-            padding: 120px 0;
-            background: var(--color-white);
-        }
-
+        /* Contact */
         .contact-content {
             text-align: center;
             max-width: 800px;
             margin: 0 auto;
-        }
-
-        .contact-description {
-            font-family: var(--font-family);
-            font-size: var(--font-size-base);
-            line-height: var(--line-height-base);
-            font-weight: var(--font-weight-light);
-            color: var(--color-text);
         }
 
         .social-links {
@@ -474,114 +308,68 @@
             padding: 20px 30px;
             background: rgba(139, 115, 85, 0.05);
             border: 2px solid rgba(139, 115, 85, 0.1);
-            border-radius: 15px;
+            border-radius: 10px;
             text-decoration: none;
-            color: var(--color-primary);
-            font-weight: 500;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            color: var(--color-text);
+            transition: all 0.3s ease;
         }
 
         .social-link:hover {
             background: var(--color-accent);
-            color: var(--color-white);
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(139, 115, 85, 0.3);
+            color: white;
         }
 
-        /* BCH Donation Section */
+        /* BCH Donation */
         .bch-donation {
-            background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-light-brown) 100%);
-            border-radius: 20px;
-            padding: 50px 40px;
+            background: var(--color-accent);
+            border-radius: 15px;
+            padding: 40px;
             text-align: center;
-            color: var(--color-white);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .bch-donation::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
-            transform: rotate(45deg);
-            animation: shine 3s infinite;
-        }
-
-        @keyframes shine {
-            0% { transform: translateX(-100%) rotate(45deg); }
-            100% { transform: translateX(100%) rotate(45deg); }
+            color: white;
+            margin-top: 40px;
         }
 
         .bch-title {
-            font-family: var(--font-display);
-            font-size: 28px;
-            font-weight: 600;
+            font-size: 24px;
+            font-weight: 500;
             margin-bottom: 20px;
-            position: relative;
-            z-index: 2;
         }
 
         .bch-address {
             background: rgba(0, 0, 0, 0.2);
-            padding: 20px;
-            border-radius: 15px;
+            padding: 15px;
+            border-radius: 10px;
             font-family: 'Courier New', monospace;
             font-size: 14px;
-            margin: 25px 0;
+            margin: 20px 0;
             word-break: break-all;
-            position: relative;
-            z-index: 2;
-            border: 1px solid rgba(255, 255, 255, 0.2);
         }
 
         .copy-btn {
-            background: var(--color-white);
+            background: white;
             color: var(--color-accent);
             border: none;
-            padding: 15px 30px;
-            border-radius: 10px;
-            font-weight: 600;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-weight: 500;
             cursor: pointer;
-            transition: all 0.3s ease;
-            position: relative;
-            z-index: 2;
-            font-size: 16px;
         }
 
         .copy-btn:hover {
-            background: var(--color-primary);
-            color: var(--color-white);
-            transform: scale(1.05);
+            background: var(--color-dark);
+            color: white;
         }
 
         /* Footer */
         .footer {
-            background: var(--color-primary);
-            color: var(--color-white);
-            padding: 60px 0 40px;
+            background: var(--color-dark);
+            color: white;
+            padding: 40px 0;
             text-align: center;
         }
 
-        .artist-pro {
-            color: var(--color-accent);
-            font-weight: 600;
-            font-size: 18px;
-        }
-
-        /* Responsive Design */
+        /* Mobile */
         @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
-
-            .mobile-menu-btn {
-                display: flex;
-            }
-
             .nav-container {
                 padding: 0 20px;
             }
@@ -590,65 +378,21 @@
                 padding: 0 20px;
             }
 
-            .hero-content {
-                padding: 0 20px;
-            }
-
-            .player-section {
-                padding: 30px 20px;
-                margin: 0 20px;
-                border-radius: 15px;
-            }
-
             .about-content {
                 grid-template-columns: 1fr;
-                gap: 50px;
+                gap: 40px;
                 text-align: center;
             }
 
             .social-links {
                 grid-template-columns: 1fr;
-                gap: 20px;
             }
-
-            .bch-donation {
-                padding: 40px 20px;
-                margin: 0 20px;
-                border-radius: 15px;
-            }
-        }
-
-        /* Fade-in Animation */
-        .fade-in {
-            opacity: 0;
-            transform: translateY(50px);
-            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        .fade-in.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* Parallax Text */
-        .parallax-text {
-            font-size: 200px;
-            font-weight: 900;
-            color: rgba(139, 115, 85, 0.03);
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            z-index: 0;
-            white-space: nowrap;
-            user-select: none;
-            pointer-events: none;
         }
     </style>
 </head>
 <body>
     <!-- Navigation -->
-    <nav class="navbar" id="navbar">
+    <nav class="navbar">
         <div class="nav-container">
             <a href="#home" class="logo">RADIO BULL TERRIER</a>
             <ul class="nav-links">
@@ -658,19 +402,22 @@
                 <li><a href="#contact">Contacto</a></li>
                 <li><a href="/blog">Blog</a></li>
             </ul>
-            <div class="mobile-menu-btn">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
         </div>
     </nav>
 
-    <!-- Hero Section with Video Background -->
+    <!-- Hero Section -->
     <section class="hero" id="home">
-        <!-- Video Background Placeholder -->
-        <div class="video-background" style="background: linear-gradient(135deg, #1a1a1a 0%, #8B7355 50%, #1a1a1a 100%); display: flex; align-items: center; justify-content: center; color: white; font-size: 24px;">
-            [Video Background Aquí]
+        <div class="video-background">
+            <!-- YouTube video embed -->
+            <iframe 
+                width="100%" 
+                height="100%" 
+                src="https://www.youtube.com/embed/KVOwPpBCj38?autoplay=1&mute=1&loop=1&playlist=KVOwPpBCj38&controls=0&showinfo=0&rel=0&modestbranding=1"
+                frameborder="0" 
+                allow="autoplay; encrypted-media" 
+                allowfullscreen
+                style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;">
+            </iframe>
         </div>
         <div class="video-overlay"></div>
         
@@ -679,7 +426,6 @@
             <p class="hero-subtitle">Rock & Reggae</p>
             <p class="hero-tagline">Difundiendo la cultura bull terrier desde 2008</p>
             
-            <!-- Radio Player Embed -->
             <div class="player-section">
                 <iframe 
                     src="http://195.26.251.31/public/radiobt/embed" 
@@ -689,17 +435,14 @@
                 </iframe>
             </div>
         </div>
-        
-        <div class="scroll-indicator"></div>
     </section>
 
-    <!-- Featured Articles Section -->
-    <section class="featured-section" id="featured">
-        <div class="parallax-text">BULL TERRIER</div>
+    <!-- Featured Articles -->
+    <section class="section" id="featured">
         <div class="container">
-            <h2 class="section-title fade-in">Artículos Destacados</h2>
+            <h2 class="section-title">Artículos Destacados</h2>
             <div class="articles-grid">
-                <article class="article-card fade-in">
+                <article class="article-card">
                     <div class="article-image">Imagen del Artículo</div>
                     <div class="article-content">
                         <div class="article-meta">15 Enero 2025</div>
@@ -709,7 +452,7 @@
                     </div>
                 </article>
 
-                <article class="article-card fade-in">
+                <article class="article-card">
                     <div class="article-image">Imagen del Artículo</div>
                     <div class="article-content">
                         <div class="article-meta">12 Enero 2025</div>
@@ -719,7 +462,7 @@
                     </div>
                 </article>
 
-                <article class="article-card fade-in">
+                <article class="article-card">
                     <div class="article-image">Imagen del Artículo</div>
                     <div class="article-content">
                         <div class="article-meta">10 Enero 2025</div>
@@ -732,19 +475,19 @@
         </div>
     </section>
 
-    <!-- About Section -->
-    <section class="about-section" id="about">
+    <!-- About -->
+    <section class="section" id="about">
         <div class="container">
-            <h2 class="section-title fade-in">Sobre Nosotros</h2>
+            <h2 class="section-title">Sobre Nosotros</h2>
             <div class="about-content">
-                <div class="about-text fade-in">
+                <div class="about-text">
                     <h3>Pasión por la Música y los Bull Terrier</h3>
                     <p>Desde 2008, Radio Bull Terrier ha sido el hogar digital para los amantes del rock y reggae que comparten una pasión especial por la noble raza bull terrier.</p>
                     <p>Nuestra emisora nació de la combinación única entre la energía del rock, la relajación del reggae y el amor incondicional por estos increíbles compañeros caninos.</p>
                     <p>Transmitimos las 24 horas del día, los 7 días de la semana, llevando la mejor selección musical directamente a tu hogar, oficina o donde quiera que estés.</p>
                 </div>
-                <div class="about-image fade-in">
-                    <div class="bull-terrier-image" style="background: linear-gradient(135deg, var(--color-accent), var(--color-light-brown)); display: flex; align-items: center; justify-content: center; color: white; font-size: 18px; height: 400px;">
+                <div class="about-image">
+                    <div class="bull-terrier-image">
                         Imagen Bull Terrier
                     </div>
                 </div>
@@ -752,45 +495,32 @@
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section class="contact-section" id="contact">
+    <!-- Contact -->
+    <section class="section" id="contact">
         <div class="container">
             <div class="contact-content">
-                <h2 class="section-title fade-in">Conecta Con Nosotros</h2>
-                <p style="font-size: 18px; margin-bottom: 40px; color: #666;" class="fade-in">Síguenos en nuestras redes sociales y sé parte de la familia Bull Terrier</p>
+                <h2 class="section-title">Conecta Con Nosotros</h2>
+                <p>Síguenos en nuestras redes sociales y sé parte de la familia Bull Terrier</p>
                 
-                <div class="social-links fade-in">
+                <div class="social-links">
                     <a href="https://www.facebook.com/RadioBullTerrier" target="_blank" class="social-link">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
-                        </svg>
-                        Facebook
+                        <span>📘</span> Facebook
                     </a>
                     
                     <a href="https://x.com/radioebt" target="_blank" class="social-link">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
-                        </svg>
-                        @radioebt
+                        <span>✖️</span> @radioebt
                     </a>
                     
                     <a href="mailto:radiobullterrier@gmail.com" class="social-link">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
-                        </svg>
-                        radiobullterrier@gmail.com
+                        <span>📧</span> radiobullterrier@gmail.com
                     </a>
                     
                     <a href="https://tunein.com/radio/Radio-Bull-Terrier" target="_blank" class="social-link">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
-                        </svg>
-                        Radio Bull Terrier
+                        <span>📻</span> Radio Bull Terrier
                     </a>
                 </div>
 
-                <!-- BCH Donation Section -->
-                <div class="bch-donation fade-in">
+                <div class="bch-donation">
                     <h3 class="bch-title">☕ Support this platform by buying me a coffee with Bitcoin Cash</h3>
                     <div class="bch-address" id="bchAddress">
                         bitcoincash:qrmyh2x674uka3jls0rwv7rnpwgty2kr3ckagu7ltu
@@ -804,250 +534,37 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <p>Una producción de <span class="artist-pro">Artist Pro</span></p>
+            <p>Una producción de <span style="color: #8B7355; font-weight: 500;">Artist Pro</span></p>
             <p style="margin-top: 15px; opacity: 0.7;">&copy; 2025 Radio Bull Terrier. Todos los derechos reservados.</p>
         </div>
     </footer>
 
     <script>
-        // Smooth scrolling and parallax effects
-        document.addEventListener('DOMContentLoaded', function() {
-            // Navbar scroll effect
-            const navbar = document.getElementById('navbar');
-            let lastScrollTop = 0;
-
-            window.addEventListener('scroll', function() {
-                const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-                
-                if (scrollTop > 100) {
-                    navbar.classList.add('scrolled');
-                } else {
-                    navbar.classList.remove('scrolled');
-                }
-                
-                // Parallax effect for background text
-                const parallaxText = document.querySelector('.parallax-text');
-                if (parallaxText) {
-                    const scrolled = window.pageYOffset;
-                    const rate = scrolled * -0.5;
-                    parallaxText.style.transform = `translate(-50%, calc(-50% + ${rate}px))`;
-                }
-                
-                lastScrollTop = scrollTop;
-            });
-
-            // Fade in animation on scroll
-            const observerOptions = {
-                threshold: 0.1,
-                rootMargin: '0px 0px -50px 0px'
-            };
-
-            const observer = new IntersectionObserver(function(entries) {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('visible');
-                    }
-                });
-            }, observerOptions);
-
-            // Observe all elements with fade-in class
-            document.querySelectorAll('.fade-in').forEach(el => {
-                observer.observe(el);
-            });
-
-            // Smooth scrolling for navigation links
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function (e) {
-                    e.preventDefault();
-                    const target = document.querySelector(this.getAttribute('href'));
-                    if (target) {
-                        const offsetTop = target.offsetTop - 80; // Account for navbar height
-                        window.scrollTo({
-                            top: offsetTop,
-                            behavior: 'smooth'
-                        });
-                    }
-                });
-            });
-
-            // Mobile menu toggle
-            const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-            const navLinks = document.querySelector('.nav-links');
-            
-            if (mobileMenuBtn) {
-                mobileMenuBtn.addEventListener('click', function() {
-                    navLinks.classList.toggle('active');
-                    this.classList.toggle('active');
-                });
-            }
-
-            // Hero parallax effect
-            window.addEventListener('scroll', function() {
-                const scrolled = window.pageYOffset;
-                const hero = document.querySelector('.hero');
-                const rate = scrolled * 0.5;
-                
-                if (hero) {
-                    hero.style.transform = `translateY(${rate}px)`;
-                }
-            });
-        });
-
-        // Copy BCH address function
+        // Copy BCH address
         function copyBCHAddress() {
             const address = document.getElementById('bchAddress').textContent.trim();
             navigator.clipboard.writeText(address).then(function() {
                 const btn = document.querySelector('.copy-btn');
-                const originalText = btn.innerHTML;
                 btn.innerHTML = '✅ Copiado!';
                 setTimeout(function() {
-                    btn.innerHTML = originalText;
-                }, 2000);
-            }).catch(function(err) {
-                console.error('Error al copiar: ', err);
-                // Fallback for older browsers
-                const textArea = document.createElement('textarea');
-                textArea.value = address;
-                document.body.appendChild(textArea);
-                textArea.select();
-                document.execCommand('copy');
-                document.body.removeChild(textArea);
-                
-                const btn = document.querySelector('.copy-btn');
-                const originalText = btn.innerHTML;
-                btn.innerHTML = '✅ Copiado!';
-                setTimeout(function() {
-                    btn.innerHTML = originalText;
+                    btn.innerHTML = '📋 Copiar';
                 }, 2000);
             });
         }
 
-        // Parallax mouse movement effect
-        document.addEventListener('mousemove', function(e) {
-            const cards = document.querySelectorAll('.article-card');
-            const x = e.clientX / window.innerWidth;
-            const y = e.clientY / window.innerHeight;
-            
-            cards.forEach((card, index) => {
-                const xMove = (x - 0.5) * 10;
-                const yMove = (y - 0.5) * 10;
-                card.style.transform = `translateX(${xMove}px) translateY(${yMove}px)`;
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
             });
-        });
-
-        // Loading animation
-        window.addEventListener('load', function() {
-            document.body.classList.add('loaded');
         });
     </script>
-
-    <style>
-        /* Additional mobile styles */
-        @media (max-width: 768px) {
-            .nav-links {
-                position: fixed;
-                top: var(--header-height);
-                left: -100%;
-                width: 100%;
-                height: calc(100vh - var(--header-height));
-                background: rgba(255, 255, 255, 0.98);
-                backdrop-filter: blur(20px);
-                flex-direction: column;
-                justify-content: flex-start;
-                align-items: center;
-                padding-top: 50px;
-                transition: left 0.3s ease;
-                border-top: 1px solid rgba(139, 115, 85, 0.1);
-            }
-
-            .nav-links.active {
-                left: 0;
-            }
-
-            .nav-links li {
-                margin: 20px 0;
-            }
-
-            .nav-links a {
-                font-family: var(--font-family);
-                font-size: 20px;
-                font-weight: var(--font-weight-medium);
-            }
-
-            .mobile-menu-btn.active span:nth-child(1) {
-                transform: rotate(-45deg) translate(-5px, 6px);
-            }
-
-            .mobile-menu-btn.active span:nth-child(2) {
-                opacity: 0;
-            }
-
-            .mobile-menu-btn.active span:nth-child(3) {
-                transform: rotate(45deg) translate(-5px, -6px);
-            }
-
-            .parallax-text {
-                font-size: 80px;
-            }
-
-            .section-title {
-                text-align: center;
-            }
-
-            .bch-address {
-                font-size: 12px;
-                padding: 15px;
-            }
-        }
-
-        /* Loading animation */
-        body:not(.loaded) {
-            overflow: hidden;
-        }
-
-        body:not(.loaded)::before {
-            content: '';
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: var(--color-secondary);
-            z-index: 9999;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        /* Enhanced card hover effects */
-        .article-card {
-            position: relative;
-            transform-style: preserve-3d;
-        }
-
-        .article-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(135deg, rgba(139, 115, 85, 0.1), rgba(210, 180, 140, 0.1));
-            opacity: 0;
-            transition: opacity 0.3s ease;
-            border-radius: 20px;
-        }
-
-        .article-card:hover::before {
-            opacity: 1;
-        }
-
-        /* Scroll indicator responsive */
-        @media (max-width: 768px) {
-            .scroll-indicator {
-                bottom: 20px;
-            }
-        }
-    </style>
 </body>
 </html>
