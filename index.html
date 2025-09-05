@@ -6,7 +6,6 @@
     <title>Radio Bull Terrier - Rock & Reggae desde 2008</title>
     <meta name="description" content="Radio Bull Terrier - Difundiendo la cultura bull terrier desde 2008. Rock & Reggae las 24 horas.">
     
-    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@200;500&display=swap" rel="stylesheet">
@@ -88,11 +87,13 @@
         .hero {
             position: relative;
             height: 100vh;
+            width: 100%;
             display: flex;
             align-items: center;
             justify-content: center;
-            background: var(--color-dark);
+            text-align: center;
             overflow: hidden;
+            color: white;
         }
 
         .video-background {
@@ -102,6 +103,18 @@
             width: 100%;
             height: 100%;
             z-index: 1;
+            overflow: hidden;
+        }
+
+        .video-background iframe {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 100vw;
+            height: 56.25vw; /* 16:9 aspect ratio */
+            min-width: 100%;
+            min-height: 100%;
+            transform: translate(-50%, -50%);
         }
 
         .video-overlay {
@@ -117,99 +130,34 @@
         .hero-content {
             position: relative;
             z-index: 3;
-            text-align: center;
-            color: white;
             max-width: 800px;
-            padding: 0 40px;
+            padding: 20px;
         }
-.hero {
-  position: relative;
-  width: 100%;
-  height: 100vh;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  color: white;
-}
 
-.video-background {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 1;
-  overflow: hidden;
-}
+        /* Títulos */
+        .hero-title {
+            font-size: 48px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
 
-.video-background iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
+        .hero-subtitle {
+            font-size: 20px;
+            margin-bottom: 30px;
+        }
 
-.video-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.6);
-  z-index: 2;
-}
-
-.hero-content {
-  position: relative;
-  z-index: 3;
-  max-width: 800px;
-  padding: 20px;
-}
-
-/* Títulos */
-.hero-title {
-  font-size: 48px;
-  font-weight: bold;
-  margin-bottom: 10px;
-}
-
-.hero-subtitle {
-  font-size: 20px;
-  margin-bottom: 30px;
-}
-
-/* Reproductor */
-.player-section {
-  background: rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(15px);
-  border-radius: 12px;
-  padding: 20px;
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  display: inline-block;
-}
-
-.player-section audio {
-  width: 100%;
-}
-
-        /* Player Section */
+        /* Reproductor */
         .player-section {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(20px);
-            border-radius: 15px;
-            padding: 30px;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            max-width: 600px;
-            margin: 0 auto;
+             /* Se eliminaron los estilos que creaban el marco */
+             display: inline-block;
+             max-width: 600px;
+             margin: 0 auto;
         }
-
-        audio {
-            width: 100%;
-            border-radius: 10px;
+        
+        .player-section iframe {
+             width: 100%; 
+             min-height: 150px; 
+             border: 0;
         }
 
         /* Sections */
@@ -444,7 +392,6 @@
     </style>
 </head>
 <body>
-    <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-container">
             <a href="#home" class="logo">
@@ -460,30 +407,27 @@
         </div>
     </nav>
 
-    <!-- HERO -->
-<section class="hero" id="home">
-  <!-- Video de fondo -->
-  <div class="video-background">
-    <iframe src="https://www.youtube.com/watch?v=KVOwPpBCj38?autoplay=1&mute=1&loop=1&playlist=VIDEO_ID_AQUI&controls=0&showinfo=0&modestbranding=1" 
-      frameborder="0" allow="autoplay; fullscreen">
-    </iframe>
-  </div>
+    <section class="hero" id="home">
+        <div class="video-background">
+            <iframe 
+                src="https://www.youtube.com/embed/KVOwPpBCj38?&autoplay=1&mute=1&playsinline=1&loop=1&playlist=KVOwPpBCj38&controls=0&showinfo=0&modestbranding=1" 
+                frameborder="0" 
+                allow="autoplay; encrypted-media">
+            </iframe>
+        </div>
 
-  <!-- Overlay oscuro -->
-  <div class="video-overlay"></div>
+        <div class="video-overlay"></div>
 
-  <!-- Contenido centrado -->
-  <div class="hero-content">
-    <h1 class="hero-title">Radio Bull Terrier</h1>
-    <p class="hero-subtitle">Rock y Reggae desde 2008</p>
+        <div class="hero-content">
+            <h1 class="hero-title">Radio Bull Terrier</h1>
+            <p class="hero-subtitle">Rock y Reggae desde 2008</p>
 
-    <!-- Reproductor -->
-    <div class="player-section">
-  <iframe src="https://radiobt.live/listen/radiobt/radio.mp3" frameborder="0" allowtransparency="true" style="width: 100%; min-height: 150px; border: 0;"></iframe>
-</div>
-</section>
+            <div class="player-section">
+                <iframe src="https://radiobt.live/listen/radiobt/radio.mp3" allowtransparency="true"></iframe>
+            </div>
+        </div>
+    </section>
 
-    <!-- Featured Articles -->
     <section class="section" id="featured">
         <div class="container">
             <h2 class="section-title">Artículos Destacados</h2>
@@ -521,7 +465,6 @@
         </div>
     </section>
 
-    <!-- About -->
     <section class="section" id="about">
         <div class="container">
             <h2 class="section-title">Sobre Nosotros</h2>
@@ -541,7 +484,6 @@
         </div>
     </section>
 
-    <!-- Contact -->
     <section class="section" id="contact">
         <div class="container">
             <div class="contact-content">
@@ -577,7 +519,6 @@
         </div>
     </section>
 
-    <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <p>Una producción de <span style="color: #8B7355; font-weight: 500;">Artist Pro</span></p>
