@@ -1,4 +1,414 @@
-<section class="hero" id="home">
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Radio Bull Terrier - Rock & Reggae desde 2008</title>
+    <meta name="description" content="Radio Bull Terrier - Difundiendo la cultura bull terrier desde 2008. Rock & Reggae las 24 horas.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@200;500&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --color-text: rgb(195, 162, 117);
+            --color-dark: #1a1a1a;
+            --color-light: #f5f5f5;
+            --color-accent: #8B7355;
+            --font-family: 'Work Sans', Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            font-family: var(--font-family);
+            font-weight: 200;
+            font-size: 17px;
+            line-height: 20px;
+            color: var(--color-text);
+            background: var(--color-light);
+        }
+
+        /* Navigation */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(139, 115, 85, 0.1);
+            z-index: 1000;
+            height: 80px;
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 40px;
+            height: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            height: 110px;
+            width: auto;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 50px;
+        }
+
+        .nav-links a {
+            color: var(--color-text);
+            text-decoration: none;
+            font-weight: 200;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--color-accent);
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 100vh;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            overflow: hidden;
+            color: white;
+        }
+
+        .video-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            overflow: hidden;
+        }
+
+        .video-background iframe {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 100vw;
+            height: 56.25vw; /* 16:9 aspect ratio */
+            min-width: 100%;
+            min-height: 100%;
+            transform: translate(-50%, -50%);
+        }
+
+        .video-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 2;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 3;
+            max-width: 800px;
+            padding: 20px;
+        }
+
+        /* Títulos */
+        .hero-title {
+            font-size: 48px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .hero-subtitle {
+            font-size: 20px;
+            margin-bottom: 30px;
+        }
+
+        /* Reproductor */
+        .player-section {
+             display: inline-block;
+             width: 100%;
+             max-width: 450px; /* Ajusta el ancho máximo si lo deseas */
+             margin: 0 auto;
+        }
+        
+        .player-section iframe {
+             width: 100%; 
+             min-height: 150px; 
+             border: 0;
+             border-radius: 10px; /* Opcional: para redondear las esquinas */
+        }
+
+        /* Sections */
+        .section {
+            padding: 120px 0;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+        .section-title {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 500;
+            text-align: center;
+            margin-bottom: 80px;
+            color: var(--color-dark);
+        }
+
+        /* Articles */
+        .articles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+        }
+
+        .article-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+            border: 1px solid rgba(139, 115, 85, 0.1);
+        }
+
+        .article-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .article-image {
+            width: 100%;
+            height: 250px;
+            background: linear-gradient(135deg, var(--color-accent), #D2B48C);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 500;
+        }
+
+        .article-content {
+            padding: 30px;
+        }
+
+        .article-meta {
+            font-size: 14px;
+            color: var(--color-accent);
+            margin-bottom: 15px;
+        }
+
+        .article-title {
+            font-size: 24px;
+            font-weight: 500;
+            margin-bottom: 15px;
+            color: var(--color-dark);
+        }
+
+        .article-excerpt {
+            margin-bottom: 20px;
+        }
+
+        .read-more {
+            color: var(--color-accent);
+            text-decoration: none;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* About */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .about-text h3 {
+            font-family: 'Futura PT', sans-serif;
+            font-weight: 500;
+            text-transform: uppercase;
+            color: var(--color-accent);
+            font-size: 32px;
+            margin: 40px 0 30px;
+            letter-spacing: 1px;
+            line-height: 1.3;
+        }
+
+        .about-text p {
+            font-size: 17px;
+            line-height: 1.6;
+            margin-bottom: 18px;
+        }
+
+        .about-image {
+            text-align: center;
+        }
+
+        .bull-terrier-image {
+            width: 100%;
+            max-width: 400px;
+            height: 400px;
+            background: linear-gradient(135deg, var(--color-accent), #D2B48C);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 500;
+        }
+
+        /* Contact */
+        .contact-content {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .social-links {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin: 60px 0;
+        }
+
+        .social-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            padding: 20px 30px;
+            background: rgba(139, 115, 85, 0.05);
+            border: 2px solid rgba(139, 115, 85, 0.1);
+            border-radius: 10px;
+            text-decoration: none;
+            color: var(--color-text);
+            transition: all 0.3s ease;
+        }
+
+        .social-link:hover {
+            background: var(--color-accent);
+            color: white;
+        }
+
+        /* BCH Donation */
+        .bch-donation {
+            background: var(--color-accent);
+            border-radius: 15px;
+            padding: 40px;
+            text-align: center;
+            color: white;
+            margin-top: 40px;
+        }
+
+        .bch-title {
+            font-size: 24px;
+            font-weight: 500;
+            margin-bottom: 20px;
+        }
+
+        .bch-address {
+            background: rgba(0, 0, 0, 0.2);
+            padding: 15px;
+            border-radius: 10px;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+            margin: 20px 0;
+            word-break: break-all;
+        }
+
+        .copy-btn {
+            background: white;
+            color: var(--color-accent);
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-weight: 500;
+            cursor: pointer;
+        }
+
+        .copy-btn:hover {
+            background: var(--color-dark);
+            color: white;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--color-dark);
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        /* Mobile */
+        @media (max-width: 768px) {
+            .nav-container {
+                padding: 0 20px;
+            }
+
+            .container {
+                padding: 0 20px;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+                text-align: center;
+            }
+
+            .social-links {
+                grid-template-columns: 1fr;
+            }
+
+            .about-text h3 {
+                font-size: 24px;
+                margin: 28px 0 24px;
+                line-height: 1.2;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#home" class="logo">
+                <img src="assets/logo-bull-terrier.png" alt="Logo de Radio Bull Terrier">
+            </a>
+            <ul class="nav-links">
+                <li><a href="#home">Inicio</a></li>
+                <li><a href="#featured">Artículos</a></li>
+                <li><a href="#about">Nosotros</a></li>
+                <li><a href="#contact">Contacto</a></li>
+                <li><a href="/blog.html">Blog</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="hero" id="home">
     <div class="video-background">
         <iframe 
             src="https://www.youtube.com/embed/KVOwPpBCj38?&autoplay=1&mute=1&playsinline=1&loop=1&playlist=KVOwPpBCj38&controls=0&showinfo=0&modestbranding=1" 
@@ -14,12 +424,133 @@
         <p class="hero-subtitle">Música & Bulls desde 2005</p>
 
         <div class="player-section">
-            <iframe 
-                src="https://radiobt.live/public/radiobt/embed?theme=dark" 
-                frameborder="0" 
-                allowtransparency="true" 
-                style="width: 100%; min-height: 150px; border: 0;">
-            </iframe>
+            <iframe src="https://radiobt.live/public/radiobt/embed?theme=light" frameborder="0" allowtransparency="true" style="width: 100%; min-height: 150px; border: 0;"></iframe>
         </div>
     </div>
 </section>
+
+    <section class="section" id="featured">
+        <div class="container">
+            <h2 class="section-title">Artículos Destacados</h2>
+            <div class="articles-grid">
+                <article class="article-card">
+                    <div class="article-image">Imagen del Artículo</div>
+                    <div class="article-content">
+                        <div class="article-meta">15 Enero 2025</div>
+                        <h3 class="article-title">La Historia del Rock y los Bull Terrier</h3>
+                        <p class="article-excerpt">Una mirada profunda a la conexión entre la música rock y la noble raza bull terrier a través de los años...</p>
+                        <a href="/blog/historia-rock-bull-terrier" class="read-more">Leer Más</a>
+                    </div>
+                </article>
+
+                <article class="article-card">
+                    <div class="article-image">Imagen del Artículo</div>
+                    <div class="article-content">
+                        <div class="article-meta">12 Enero 2025</div>
+                        <h3 class="article-title">Los Mejores Temas Reggae para tu Bull Terrier</h3>
+                        <p class="article-excerpt">Descubre la playlist perfecta que combina la relajación del reggae con la energía de tu compañero canino...</p>
+                        <a href="/blog/reggae-bull-terrier" class="read-more">Leer Más</a>
+                    </div>
+                </article>
+
+                <article class="article-card">
+                    <div class="article-image">Imagen del Artículo</div>
+                    <div class="article-content">
+                        <div class="article-meta">10 Enero 2025</div>
+                        <h3 class="article-title">Cuidados Esenciales para Bull Terriers</h3>
+                        <p class="excerpt">Todo lo que necesitas saber para mantener a tu bull terrier feliz y saludable mientras disfrutas de buena música...</p>
+                        <a href="/blog/cuidados-bull-terrier" class="read-more">Leer Más</a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="about">
+        <div class="container">
+            <h2 class="section-title">Sobre Nosotros</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>PASIÓN POR LA MÚSICA Y LOS BULL TERRIER</h3>
+                    <p>Desde 2008, Radio Bull Terrier ha sido el hogar digital para los amantes del rock y reggae que comparten una pasión especial por la noble raza bull terrier.</p>
+                    <p>Nuestra emisora nació de la combinación única entre la energía del rock, la relajación del reggae y el amor incondicional por estos increíbles compañeros caninos.</p>
+                    <p>Transmitimos las 24 horas del día, los 7 días de la semana, llevando la mejor selección musical directamente a tu hogar, oficina o donde quiera que estés.</p>
+                </div>
+                <div class="about-image">
+                    <div class="bull-terrier-image">
+                        Imagen Bull Terrier
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="contact">
+        <div class="container">
+            <div class="contact-content">
+                <h2 class="section-title">Conecta Con Nosotros</h2>
+                <p>Síguenos en nuestras redes sociales y sé parte de la familia Bull Terrier</p>
+                
+                <div class="social-links">
+                    <a href="https://www.facebook.com/RadioBullTerrier" target="_blank" class="social-link">
+                        Facebook
+                    </a>
+                    
+                    <a href="https://x.com/radioebt" target="_blank" class="social-link">
+                        @radioebt
+                    </a>
+                    
+                    <a href="mailto:radiobullterrier@gmail.com" class="social-link">
+                        radiobullterrier@gmail.com
+                    </a>
+                    
+                    <a href="https://tunein.com/radio/Radio-Bull-Terrier" target="_blank" class="social-link">
+                        Radio Bull Terrier
+                    </a>
+                </div>
+
+                <div class="bch-donation">
+                    <h3 class="bch-title">Support this platform by buying me a coffee with Bitcoin Cash</h3>
+                    <div class="bch-address" id="bchAddress">
+                        bitcoincash:qrmyh2x674uka3jls0rwv7rnpwgty2kr3ckagu7ltu
+                    </div>
+                    <button class="copy-btn" onclick="copyBCHAddress()">Copiar</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>Una producción de <span style="color: #8B7355; font-weight: 500;">Artist Pro</span></p>
+            <p style="margin-top: 15px; opacity: 0.7;">&copy; 2025 Radio Bull Terrier. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        function copyBCHAddress() {
+            const address = document.getElementById('bchAddress').textContent.trim();
+            navigator.clipboard.writeText(address).then(function() {
+                const btn = document.querySelector('.copy-btn');
+                btn.innerHTML = 'Copiado!';
+                setTimeout(function() {
+                    btn.innerHTML = 'Copiar';
+                }, 2000);
+            });
+        }
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
